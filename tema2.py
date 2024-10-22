@@ -6,6 +6,7 @@ parte2 = articol[lungime // 2:]
 parte1 = parte1.strip().upper()
 parte2 = parte2[::-1]
 parte2 = parte2.capitalize()
-parte2 = " ".join(c for c in parte2 if c.isalnum() or c.isspace())
+import string
+parte2 = parte2.translate(str.maketrans(" "," ", string.punctuation ))
 rezultat = parte1 + " " + parte2
 print(rezultat)
